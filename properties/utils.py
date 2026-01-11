@@ -7,10 +7,7 @@ def get_all_properties():
     queryset = cache.get(cache_key)
 
     if queryset is None:
-        print("❌ CACHE MISS")
-        queryset = list(Property.objects.values())
+        queryset = Property.objects.all()
         cache.set(cache_key, queryset, 3600)
-    else:
-        print("✅ CACHE HIT")
 
     return queryset
