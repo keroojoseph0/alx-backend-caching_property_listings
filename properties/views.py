@@ -7,6 +7,6 @@ from django.http import JsonResponse
 
 @cache_page(60 * 15)
 def property_list(request):
-    properties = list(Property.objects.values())
+    data = list(Property.objects.values())
 
-    return JsonResponse(properties, safe=False)
+    return JsonResponse(data, safe=False)
