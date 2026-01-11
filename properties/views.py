@@ -9,4 +9,4 @@ from django.http import JsonResponse
 def property_list(request):
     properties_data = list(Property.objects.values())
 
-    return JsonResponse(properties_data, safe=False)
+    return JsonResponse({properties_data}, safe=False)
